@@ -161,3 +161,4 @@ cython_debug/
 
 # 排除data目录
 data/
+test/

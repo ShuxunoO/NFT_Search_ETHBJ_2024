@@ -1,1 +1,2 @@
-gunicorn -c gunicorn_config.py flask_server.py:app
+gunicorn -c gunicorn_config.py model_server:app
+gradio '/data/sswang/gradio/NFT_search/app_v2.py'
