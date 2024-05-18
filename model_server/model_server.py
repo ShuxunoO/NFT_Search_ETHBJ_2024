@@ -269,6 +269,7 @@ def img_search(input_features, mode, img_feature_index = None, caption_feature_i
         raise ValueError("Invalid mode")
     
     return search_results[:k]
+
 def text_search_within_a_collection(input_caption_features, feature_base_path, nft_name, mode, k=30, GPU_ID=0):
     """
     在指定的NFT内部进行文本搜索。
