@@ -352,7 +352,7 @@ def caption_directed_search():
     input_caption_features = base_model_and_function.extract_txt_features(input_caption)
     # 第二阶段搜索
     show_data = text_search_within_a_collection(input_caption_features, feature_base_path, nft_name, mode)
-    # return show_data
+    show_data = [show_data] + [[] for _ in range(9)]
     return jsonify(show_data)
 
 @app.route('/img_global_search', methods=['POST'])
@@ -394,6 +394,7 @@ def img_directed_search():
         nft_name = request.form['nft_name']
         # 第二阶段搜索
         show_data = img_search_within_a_collection(input_img_features, feature_base_path, nft_name, mode)
+        show_data = [show_data] + [[] for _ in range(9)]
         return jsonify(show_data)
 
 feature_base_path = "/data/sswang/data/NFT1000_features_ETHBJ"

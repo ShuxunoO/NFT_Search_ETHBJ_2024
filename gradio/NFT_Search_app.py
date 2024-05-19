@@ -65,6 +65,7 @@ def process_input_img(input_image, mode, directed_search_name):
 
     if directed_search_name == "NULL":
         url = img_global_search_url
+        
     else:
         url = img_directed_search_url
 
@@ -73,11 +74,12 @@ def process_input_img(input_image, mode, directed_search_name):
 
     # 打印返回结果
     if response.status_code == 200:
-        # print("Response JSON:", response.json())
+        print("Response JSON:", response.json())
         return response.json()
     else:
         # print(f"Request failed with status code {response.status_code}")
         return None
+
 
 # 清除按钮的功能实现
 def clear_text_input():
